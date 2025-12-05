@@ -17,6 +17,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '3分钟极速交易模拟。在疯狂的 K 线图中，与其他（AI）散户博弈。发表情包带节奏，做多做空，体验贪婪与恐惧的过山车！',
     thumbnail: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=600&auto=format&fit=crop', // Stock chart / Trading screen
     category: 'Strategy',
+    collection: 'creative',
     component: GameMarketIO,
   },
   {
@@ -25,6 +26,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '从公元前10000年开始的宏大史诗。见证人类从石器时代到星际文明的演变。你的每一个决策都将决定文明的命运。',
     thumbnail: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=600&auto=format&fit=crop', // History / Old paper / Time
     category: 'Strategy',
+    collection: 'creative',
     component: Game10000Years,
   },
   {
@@ -33,6 +35,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '一场演技的生死对决。混入 100 个 NPC 之中，模仿他们的行为，找出隐藏的杀手并暗杀他们。切记：不要奔跑，不要暴露！',
     thumbnail: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=600&auto=format&fit=crop', // Crowd / Top down view
     category: 'Strategy',
+    collection: 'creative',
     component: GameNpcRoyale,
   },
   {
@@ -41,6 +44,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '驾驶战机，在无尽的弹幕和敌人中生存下来！基于 HTML5 Canvas 的高性能射击体验。',
     thumbnail: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=600&auto=format&fit=crop', // Abstract colorful space
     category: 'Arcade',
+    collection: 'classic',
     component: GameShooter,
   },
   {
@@ -49,6 +53,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '经典永不过时。堆叠方块，消除行数，挑战最高分！',
     thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop', // Retro tech/pixels
     category: 'Puzzle',
+    collection: 'classic',
     component: GameTetris,
   },
   {
@@ -57,6 +62,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '运用逻辑推理，避开所有地雷。插旗标记，步步为营。',
     thumbnail: 'https://images.unsplash.com/photo-1636955840493-f43a02bfa064?q=80&w=600&auto=format&fit=crop', // Grid/Cyber pattern
     category: 'Strategy',
+    collection: 'classic',
     component: GameMinesweeper,
   },
   {
@@ -65,6 +71,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '控制小蛇吞噬能量块，小心不要撞到墙壁或自己。反应速度的大考验！',
     thumbnail: 'https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=600&auto=format&fit=crop', // Neon lights
     category: 'Action',
+    collection: 'classic',
     component: GameSnake,
   },
   {
@@ -73,6 +80,7 @@ export const GAME_REGISTRY: GameMetadata[] = [
     description: '移动方块，合并数字，向着 2048 冲刺！经典的逻辑益智游戏。',
     thumbnail: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=600&auto=format&fit=crop', // Abstract blocks
     category: 'Puzzle',
+    collection: 'classic',
     component: Game2048,
   },
 ];

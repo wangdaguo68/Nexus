@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Layout } from './components/Layout';
 import { GameCard } from './components/GameCard';
 import { GAME_REGISTRY } from './games/registry';
-import { Sparkles, Gamepad, Zap, Ghost } from 'lucide-react';
+import { Sparkles, Gamepad, Zap, Ghost, Lightbulb, Joystick } from 'lucide-react';
 
 const App: React.FC = () => {
   const [activeGameId, setActiveGameId] = useState<string | null>(null);
 
   const activeGame = activeGameId ? GAME_REGISTRY.find(g => g.id === activeGameId) : null;
   const ActiveComponent = activeGame ? activeGame.component : null;
+
+  const creativeGames = GAME_REGISTRY.filter(g => g.collection === 'creative');
+  const classicGames = GAME_REGISTRY.filter(g => g.collection === 'classic');
 
   return (
     <Layout 
@@ -50,15 +53,37 @@ const App: React.FC = () => {
              </div>
           </div>
 
-          {/* Game Grid */}
-          <div className="mb-8">
+          {/* Creative Games Grid */}
+          <div className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <span className="w-1 h-6 bg-indigo-500 rounded-full"></span>
-              精选游戏
+              <span className="p-1.5 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg">
+                <Lightbulb size={18} className="text-white" />
+              </span>
+              创意实验室
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {GAME_REGISTRY.map(game => (
+              {creativeGames.map(game => (
+                <GameCard 
+                  key={game.id} 
+                  game={game} 
+                  onPlay={setActiveGameId} 
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Classic Games Grid */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span className="p-1.5 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg">
+                <Joystick size={18} className="text-white" />
+              </span>
+              经典街机
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {classicGames.map(game => (
                 <GameCard 
                   key={game.id} 
                   game={game} 
@@ -66,16 +91,16 @@ const App: React.FC = () => {
                 />
               ))}
               
-              {/* Coming Soon Placeholders to make the grid look fuller/show potential */}
-              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 flex flex-col items-center justify-center text-center opacity-60 border-dashed">
+              {/* Coming Soon Placeholders - Moved to Classic section */}
+              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 flex flex-col items-center justify-center text-center opacity-60 border-dashed min-h-[300px]">
                 <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4">
                   <Gamepad className="w-6 h-6 text-slate-600" />
                 </div>
-                <h3 className="text-white font-semibold mb-1">俄罗斯方块</h3>
+                <h3 className="text-white font-semibold mb-1">太空侵略者</h3>
                 <span className="text-xs text-indigo-400 bg-indigo-900/30 px-2 py-0.5 rounded">敬请期待</span>
               </div>
               
-              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 flex flex-col items-center justify-center text-center opacity-60 border-dashed">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 flex flex-col items-center justify-center text-center opacity-60 border-dashed min-h-[300px]">
                 <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4">
                    <Ghost className="w-6 h-6 text-slate-600" />
                 </div>

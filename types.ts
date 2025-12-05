@@ -7,6 +7,7 @@ export interface GameMetadata {
   thumbnail: string; // URL or placeholder color
   component: React.ComponentType<{ onExit: () => void }>;
   category: 'Puzzle' | 'Action' | 'Strategy' | 'Arcade';
+  collection: 'creative' | 'classic';
 }
 
 export interface PlatformState {
